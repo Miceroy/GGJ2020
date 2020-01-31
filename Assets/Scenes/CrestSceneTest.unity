@@ -2175,7 +2175,7 @@ PrefabInstance:
     - target: {fileID: 6370312182862802033, guid: 0dde4b778082b1241ba64e4ad3e46fa1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6370312182862802033, guid: 0dde4b778082b1241ba64e4ad3e46fa1,
         type: 3}
@@ -2327,62 +2327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _disableRenderer: 1
---- !u!1 &803041731
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 803041732}
-  - component: {fileID: 803041733}
-  m_Layer: 0
-  m_Name: OceanWavesBatched
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &803041732
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803041731}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: -0.000011444092}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1839233244}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &803041733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803041731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7581c8217e105de4b83ca0ce4f8fa8c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spectrum: {fileID: 11400000, guid: b066d8398541b1844a63a9c12919e528, type: 2}
-  _windDirectionAngle: 0
-  _componentsPerOctave: 8
-  _weight: 0.2
-  _randomSeed: 0
-  _evaluateSpectrumAtRuntime: 1
-  _wavelengths: []
-  _amplitudes: []
-  _angleDegs: []
-  _phases: []
-  _directTowardsPoint: 0
-  _pointPositionXZ: {x: 0, y: 0}
-  _pointRadii: {x: 100, y: 200}
 --- !u!1 &834987656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,28 +2596,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewpoint: {fileID: 0}
   _timeProvider: {fileID: 0}
-  _material: {fileID: 2100000, guid: ef94c26e44a36e24a9dcbc5995a2bed1, type: 2}
+  _material: {fileID: 2100000, guid: 87154d42bae1f4341817d87e34d49dbc, type: 2}
   _layerName: Water
   _gravityMultiplier: 1
   _minTexelsPerWave: 3
-  _minScale: 4
+  _minScale: 8
   _maxScale: 256
   _dropDetailHeightBasedOnWaves: 0.2
-  _lodDataResolution: 384
-  _geometryDownSampleFactor: 4
+  _lodDataResolution: 512
+  _geometryDownSampleFactor: 2
   _lodCount: 7
   _simSettingsAnimatedWaves: {fileID: 0}
   _createSeaFloorDepthData: 1
   _createFoamSim: 1
-  _simSettingsFoam: {fileID: 0}
+  _simSettingsFoam: {fileID: 11400000, guid: 85906c176eba52247aeda1073dce38c4, type: 2}
   _createDynamicWaveSim: 0
-  _simSettingsDynamicWaves: {fileID: 0}
+  _simSettingsDynamicWaves: {fileID: 11400000, guid: ef853bc053068154eb269f9be53f0135,
+    type: 2}
   _createFlowSim: 0
   _simSettingsFlow: {fileID: 0}
-  _createShadowData: 1
-  _primaryLight: {fileID: 1589415980}
+  _createShadowData: 0
+  _primaryLight: {fileID: 0}
   _simSettingsShadow: {fileID: 0}
-  _createClipSurfaceData: 1
+  _createClipSurfaceData: 0
   _uniformTiles: 0
   _disableSkirt: 0
   _followViewpoint: 1
@@ -4284,7 +4229,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1839233244}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1401789446
 MonoBehaviour:
@@ -4379,7 +4324,7 @@ Transform:
   m_LocalScale: {x: 82.89557, y: 82.89557, z: 82.89557}
   m_Children: []
   m_Father: {fileID: 1839233244}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1401799664
 MonoBehaviour:
@@ -5358,7 +5303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1839233244}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1783539641
 MonoBehaviour:
@@ -5463,7 +5408,7 @@ Transform:
   m_Children:
   - {fileID: 1113602774}
   m_Father: {fileID: 1839233244}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839233243
 GameObject:
@@ -5492,7 +5437,6 @@ Transform:
   m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 803041732}
   - {fileID: 1799595269}
   - {fileID: 1783539640}
   - {fileID: 782025551}
@@ -5635,7 +5579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7581c8217e105de4b83ca0ce4f8fa8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spectrum: {fileID: 11400000, guid: 454d1b08383f089479cf6794620926f4, type: 2}
+  _spectrum: {fileID: 11400000, guid: 073bac59c69f0ac4e8424a8fe396e56a, type: 2}
   _windDirectionAngle: 0
   _componentsPerOctave: 8
   _weight: 1
