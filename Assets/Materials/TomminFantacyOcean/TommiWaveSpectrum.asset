@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33068fc021dadc04dab6e00e4ff45c00, type: 3}
-  m_Name: WavesCalm
+  m_Name: TommiWaveSpectrum
   m_EditorClassIdentifier: 
-  _windSpeed: 10
+  _windSpeed: 8.083334
   _fetch: 500000
-  _waveDirectionVariance: 56
+  _waveDirectionVariance: 21
   _gravityScale: 1
-  _smallWavelengthMultiplier: 1
-  _multiplier: 1
+  _smallWavelengthMultiplier: 0.91
+  _multiplier: 1.4
   _powerLog:
-  - -0.17857143
-  - -6
-  - 0.28571436
-  - 2.75
-  - -3.4179828
-  - -0.58673483
-  - -2.6839218
-  - 5
-  - 3.9285715
-  - -2.426152
-  - 3.5522916
-  - -1.8416357
-  - -1.8156034
-  - -6
+  - -5.743933
+  - -5.1418757
+  - -4.5398273
+  - -3.9378119
+  - -3.3359303
+  - -2.734585
+  - -2.1353834
+  - -1.5447571
+  - -0.7857143
+  - 0.93068904
+  - 1.050993
+  - 0.5714286
+  - -4.035714
+  - -5.035714
   _powerDisabled: 0000000000000000000000000000
   _chopScales:
   - 1
