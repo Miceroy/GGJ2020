@@ -7,12 +7,12 @@ using UnityEngine;
 /// </summary>
 public class GameComponent : MonoBehaviour
 {
-    void Awake()
+    void OnEnable()
     {
         getGameManager().registerComponent(this);
     }
 
-    ~GameComponent()
+    void OnDisable()
     {
         getGameManager().unregisterComponent(this);
     }
