@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Molotov
   m_EditorClassIdentifier: 
   m_Config:
-    m_damage: 0
-    m_radius: 0.92
+    m_damage: 100
+    m_radius: 0.12
