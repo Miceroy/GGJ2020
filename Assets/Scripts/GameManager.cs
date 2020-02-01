@@ -24,15 +24,20 @@ public class GameManager : MonoBehaviour
     public GameObject enemyBoatPrefab;
     public float spawnRadius = 100;
     public List<GameComponent> gameComponents = new List<GameComponent>();
+    public List<EnemyBoatController> enemyBoats = new List<EnemyBoatController>();
 
     public void registerComponent(GameComponent newComponent)
     {
         gameComponents.Add(newComponent);
+        EnemyBoatController enemyBoat = (EnemyBoatController)newComponent;
+        if (enemyBoat) enemyBoats.Add(enemyBoat);
     }
 
     public void unregisterComponent(GameComponent componentToRemove)
     {
         gameComponents.Remove(componentToRemove);
+        EnemyBoatController enemyBoat = (EnemyBoatController)componentToRemove;
+        if (enemyBoat) enemyBoats.Remove(enemyBoat);
     }
 
     public void spawnNewEnemy()
@@ -43,14 +48,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnNewEnemy();
-        spawnNewEnemy();
-        spawnNewEnemy();
-        spawnNewEnemy();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if( enemyBoats.Count < 4)
+        {
+            spawnNewEnemy();
+        }
     }
 }
