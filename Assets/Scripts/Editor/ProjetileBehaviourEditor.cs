@@ -18,19 +18,30 @@ public class ProjectileBehaviourEditor : Editor
         if(m_projectileObjectProperty == null)
             return;
         
+        if(m_projectileObjectProperty.objectReferenceValue == null)
+            return;
+
         m_serializedProjectileObject = new SerializedObject(m_projectileObjectProperty.objectReferenceValue);
+
         m_projectileConfigProperty = m_serializedProjectileObject.FindProperty("m_Config");
         m_radiusProperty = m_projectileConfigProperty.FindPropertyRelative("m_radius");
     }
 
     public override void OnInspectorGUI()
     {
+        OnEnable();
         serializedObject.Update();
         EditorGUILayout.ObjectField(m_projectileObjectProperty);
         serializedObject.ApplyModifiedProperties();
 
         if(m_projectileObjectProperty.objectReferenceValue == null)
             return;
+
+        if(m_serializedProjectileObject == null)
+        {
+            m_serializedProjectileObject = new SerializedObject(m_projectileObjectProperty.objectReferenceValue);
+            OnEnable();
+        }
 
         m_serializedProjectileObject.Update();
         float newRadius = m_radiusProperty.floatValue;
@@ -40,6 +51,7 @@ public class ProjectileBehaviourEditor : Editor
 
     private void OnSceneGUI()
     {
+        OnEnable();
         if(m_projectileObjectProperty.objectReferenceValue == null)
             return;
 
