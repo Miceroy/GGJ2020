@@ -26,13 +26,18 @@ public class GameManager : MonoBehaviour
     public List<EnemyBoatController> enemyBoats = new List<EnemyBoatController>();
     public List<PlayerController> players = new List<PlayerController>();
 
+    private bool playersSpawned = false;
+
     public void registerComponent(GameComponent newComponent)
     {
         gameComponents.Add(newComponent);
         EnemyBoatController enemyBoat = (EnemyBoatController)newComponent;
         if (enemyBoat) enemyBoats.Add(enemyBoat);
         PlayerController player = (PlayerController)newComponent;
-        if (player) players.Add(player);
+        if (player) {
+            playersSpawned = true;
+            players.Add(player);
+        }
     }
 
     public void unregisterComponent(GameComponent componentToRemove)
@@ -62,7 +67,8 @@ public class GameManager : MonoBehaviour
         {
             spawnNewEnemy();
         }
-        if(players.Count == 0)
+
+        if(playersSpawned && players.Count == 0)
         {
             Application.LoadLevel("Scenes/MainMenuScene");
         }
