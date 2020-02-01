@@ -107,9 +107,11 @@ Shader "Custom/ToonShading"
 				float diff = smoothstep(_RampThreshold - NdotL, _RampThreshold + NdotL, NdotL);
 				float ramp = floor(diff * _RampAmount) / _RampAmount;
 				float4 rampColor = lerp(_Color, _AmbientColor, ramp) * 1.5;
-				//rampColor.a = 1;
 
 				float4 sample = tex2D(_MainTex, i.uv);
+
+				if (sample.a == 0)
+					discard;
 
 				return (light + _AmbientColor + specular + rim + rampColor) * _Color * sample;
 			}
