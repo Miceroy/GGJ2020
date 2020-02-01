@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8911012573276883218}
   - component: {fileID: 2641600188263817172}
+  - component: {fileID: 4267999308137549946}
   m_Layer: 0
   m_Name: sawnoff
   m_TagString: Untagged
@@ -239,3 +240,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4267999308137549946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616304715615943425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1175431176ae1441bcdaedb30686f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GunConfigObject: {fileID: 11400000, guid: 56b105d711792e74aa80e9149eec6f25, type: 2}
