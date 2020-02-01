@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc96e52a52bedf43a50fef1bde11977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeed: 20
+  translationSpeed: 5
 --- !u!1001 &8724947781763390519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,7 +91,8 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4177256264568814459, guid: 80437c758525d3c4a9bda19a7364ddf3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80437c758525d3c4a9bda19a7364ddf3, type: 3}
 --- !u!1 &4753881279404168047 stripped
 GameObject:

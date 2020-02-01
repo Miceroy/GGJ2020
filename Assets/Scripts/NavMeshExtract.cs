@@ -6,11 +6,22 @@ using UnityEditor;
 
 namespace UnityEngine.AI
 {
+    [ExecuteAlways]
     [RequireComponent(typeof(MeshCollider))]
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
     public class NavMeshExtract : MonoBehaviour
     {
+        public bool updateDynamically = false;
+
+        public void Update()
+        {
+            if (updateDynamically)
+            {
+                UpdateMesh();
+            }
+        }
+
         public void UpdateMesh()
         {
             Mesh mesh = GetMesh();
