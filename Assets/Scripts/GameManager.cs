@@ -24,12 +24,15 @@ public class GameManager : MonoBehaviour
     public float spawnRadius = 100;
     public List<GameComponent> gameComponents = new List<GameComponent>();
     public List<EnemyBoatController> enemyBoats = new List<EnemyBoatController>();
+    public List<PlayerController> players = new List<PlayerController>();
 
     public void registerComponent(GameComponent newComponent)
     {
         gameComponents.Add(newComponent);
         EnemyBoatController enemyBoat = (EnemyBoatController)newComponent;
         if (enemyBoat) enemyBoats.Add(enemyBoat);
+        PlayerController player = (PlayerController)newComponent;
+        if (player) players.Add(player);
     }
 
     public void unregisterComponent(GameComponent componentToRemove)
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
         gameComponents.Remove(componentToRemove);
         EnemyBoatController enemyBoat = (EnemyBoatController)componentToRemove;
         if (enemyBoat) enemyBoats.Remove(enemyBoat);
+        PlayerController player = (PlayerController)componentToRemove;
+        if (player) players.Remove(player);
     }
 
     public void spawnNewEnemy()
@@ -56,6 +61,10 @@ public class GameManager : MonoBehaviour
         if( enemyBoats.Count < 4)
         {
             spawnNewEnemy();
+        }
+        if(players.Count == 0)
+        {
+            Application.LoadLevel("Scenes/MainMenuScene");
         }
     }
 }
