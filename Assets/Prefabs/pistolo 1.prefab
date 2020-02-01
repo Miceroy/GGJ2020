@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6815592998094498786}
   - component: {fileID: 3364428355868832976}
   - component: {fileID: 5108712206586520482}
+  - component: {fileID: 183037735104152345}
   m_Layer: 0
   m_Name: Luisti
   m_TagString: Untagged
@@ -89,6 +90,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &183037735104152345
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344098966781252097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: cf32dc55116414042afa5192d26fd0b5, type: 3}
 --- !u!1 &5207185917871594412
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +115,7 @@ GameObject:
   - component: {fileID: 5787209240322600184}
   - component: {fileID: 9177419454604536788}
   - component: {fileID: 3653284805728378812}
+  - component: {fileID: 2765702370941953063}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -167,6 +183,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2765702370941953063
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207185917871594412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300006, guid: cf32dc55116414042afa5192d26fd0b5, type: 3}
 --- !u!1 &5424226668495480289
 GameObject:
   m_ObjectHideFlags: 0
