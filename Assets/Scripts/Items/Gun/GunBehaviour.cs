@@ -22,15 +22,24 @@ public class GunBehaviour : MonoBehaviour
         if(!m_gun.Shoot())
             return;
 
-        if(m_gun.Config.FireType == FireType.RayTrace)
+        FireType fireType = m_gun.Config.FireType;
+
+        if(fireType == FireType.RayTrace)
         {
             RaycastHit hit;
             
             if(!Physics.Raycast(transform.position + m_gun.Config.MuzzlePosition, transform.forward, out hit))
                 return;
 
-            //if(hit.collider.tag == "Enemy")
+            IDamage damageable = hit.transform.GetComponent<IDamage>();
+            if(damageable == null)
+                return;
 
+            damageable.Take(m_gun.Config.Damage);
+        }
+        else if(fireType == FireType.Projectile)
+        {
+            
         }
     }
 }
