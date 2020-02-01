@@ -27,7 +27,11 @@ public struct GunConfig
                 m_ammonCount = value;
         }
     }
-    public float FireRate { get{ return m_fireRate; } }
+    public float FireRate 
+    { 
+        get{ return m_fireRate; }
+        set{ m_fireRate = 1f / value; }
+    }
     public float Damage { get{ return m_damage; } }
     public Vector3 MuzzlePosition
     {
@@ -41,7 +45,7 @@ public struct GunConfig
         m_fireType = fireType;
         m_maxMagazineSize = magazineSize;
         m_ammonCount = m_maxMagazineSize;
-        m_fireRate = fireRate;
+        m_fireRate = 1f / fireRate;
         m_damage = damage;
         m_muzzlePosition = Vector3.zero;
     }
