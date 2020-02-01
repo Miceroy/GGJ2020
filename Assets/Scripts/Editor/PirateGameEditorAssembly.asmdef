@@ -1,0 +1,17 @@
+{
+    "name": "PirateGameEditorAssembly",
+    "references": [
+        "GUID:63baf916679f01648a46ca0e3b14869d"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
