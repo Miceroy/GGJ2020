@@ -9,6 +9,7 @@ public class GunInput : MonoBehaviour
     public SteamVR_Action_Boolean shoot;
     public GunBehaviour behaviour;
     public Animator gunAnimator;
+    public AudioSource source;
 
     private SteamVR_Input_Sources hand;
     private Interactable interactable;
@@ -50,6 +51,13 @@ public class GunInput : MonoBehaviour
         if (behaviour != null)
         {
             behaviour.Shoot();
+
+            if (source != null)
+            {
+                source.Stop();
+                source.Play();
+            }
+
             if (gunAnimator != null)
             {
                 gunAnimator.SetTrigger("Shoot");
