@@ -10,7 +10,8 @@ public class ilandMover : MonoBehaviour
     private Vector3 parentPos;
     private float distanse = 0;
     public Vector3 targetToDie;
-    public Vector3 ofset; 
+    public Vector3 ofset;
+
     void Start()
     {
         parent = this.gameObject.transform.parent.gameObject;
