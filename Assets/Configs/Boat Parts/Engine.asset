@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2deb5a4a656ee2a49877c363b59ee223, type: 3}
-  m_Name: Molotov
+  m_Script: {fileID: 11500000, guid: d99938c99db05db4f8f97ebc0a8b7a2e, type: 3}
+  m_Name: Engine
   m_EditorClassIdentifier: 
   m_Config:
-    m_damage: 100
-    m_radius: 0.12
+    m_name: Engine
+    m_currentHealth: 100
+    m_maxHealth: 100
+    m_explosionDamage: 50
+    m_explosionRadius: 0.35
