@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2deb5a4a656ee2a49877c363b59ee223, type: 3}
-  m_Name: Projectile Config
+  m_Name: Molotov
   m_EditorClassIdentifier: 
-  Config:
+  m_Config:
     m_damage: 0
-    m_radius: 0
+    m_radius: 0.92

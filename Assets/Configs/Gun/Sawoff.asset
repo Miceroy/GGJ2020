@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Sawoff
   m_EditorClassIdentifier: 
   m_Config:
-    m_name: 
+    m_name: Sawoff
     m_fireType: 0
-    m_maxMagazineSize: 0
-    m_ammonCount: 0
-    m_fireRate: 0
-    m_damage: 0
-    m_muzzlePosition: {x: 0, y: 0, z: 0}
+    m_maxMagazineSize: 2
+    m_ammonCount: 2
+    m_fireRate: 1
+    m_damage: 100
+    m_muzzlePosition: {x: 0, y: 0.018146463, z: 0.20408523}
