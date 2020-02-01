@@ -45,7 +45,7 @@ public class ProjectileBehaviourEditor : Editor
 
         m_serializedProjectileObject.Update();
         float newRadius = m_radiusProperty.floatValue;
-        m_radiusProperty.floatValue = EditorGUILayout.Slider(newRadius, 0f, 10f);
+        m_radiusProperty.floatValue = EditorGUILayout.Slider("Explosion Radius: ", newRadius, 0f, 10f);
         m_serializedProjectileObject.ApplyModifiedProperties();
     }
 
