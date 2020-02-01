@@ -16,4 +16,30 @@ public class GunBehaviour : MonoBehaviour
     {
         m_gun.TimeUpdate(Time.deltaTime);
     }
+
+    public void Shoot()
+    {
+        if(!m_gun.Shoot())
+            return;
+
+        FireType fireType = m_gun.Config.FireType;
+
+        if(fireType == FireType.RayTrace)
+        {
+            RaycastHit hit;
+            
+            if(!Physics.Raycast(transform.position + m_gun.Config.MuzzlePosition, transform.forward, out hit))
+                return;
+
+            IDamage damageable = hit.transform.GetComponent<IDamage>();
+            if(damageable == null)
+                return;
+
+            damageable.Take(m_gun.Config.Damage);
+        }
+        else if(fireType == FireType.Projectile)
+        {
+            
+        }
+    }
 }
