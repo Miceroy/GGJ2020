@@ -1,4 +1,7 @@
-﻿Shader "Custom/ToonShading"
+﻿// Adapted from https://roystan.net/articles/toon-shader.html
+// and Sorumi Unity Toon Shader to add ramps.
+
+Shader "Custom/ToonShading"
 {
 	Properties
 	{
@@ -6,9 +9,12 @@
 		_MainTex("Main Texture", 2D) = "white" {}
 		[HDR] _AmbientColor("Ambient Color", Color) = (0.4, 0.4, 0.4, 1)
 		[HDR] _SpecularColor("Specular Color", Color) = (0.9, 0.9, 0.9, 1)
+		_Glossiness("Glossiness", Float) = 32
 		[HDR] _RimColor("Rim Color", Color) = (1,1,1,1)
 		_RimAmount("Rim Amount", Range(0,1)) = 0.716
 		_RimThreshold("Rim Threshold", Range(0,1)) = 0.1
+		_RampAmount("Ramp Amount", Range(1,9)) = 1
+		_RampThreshold("Ramp Threshold", Range(0.01,1)) = 0.1
 	}
 	SubShader
 	{
@@ -70,6 +76,9 @@
 			float _RimAmount;
 			float _RimThreshold;
 
+			float _RampAmount;
+			float _RampThreshold;
+
 			float4 frag (v2f i) : SV_Target
 			{
 				float3 normal = normalize(i.worldNormal);
@@ -95,9 +104,14 @@
 				rimIntensity = smoothstep(_RimAmount - 0.01, _RimAmount + 0.01, rimIntensity);
 				float4 rim = rimIntensity * _RimColor;
 
+				float diff = smoothstep(_RampThreshold - NdotL, _RampThreshold + NdotL, NdotL);
+				float ramp = floor(diff * _RampAmount) / _RampAmount;
+				float4 rampColor = lerp(_Color, _AmbientColor, ramp) * 1.5;
+				//rampColor.a = 1;
+
 				float4 sample = tex2D(_MainTex, i.uv);
 
-				return (light + _AmbientColor + specular + rim) * _Color * sample;
+				return (light + _AmbientColor + specular + rim + rampColor) * _Color * sample;
 			}
 			ENDCG
 		}

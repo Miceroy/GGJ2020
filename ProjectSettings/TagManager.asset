@@ -6,6 +6,9 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - PlayerBoat
+  - EnemyBoat
+  - Enemy
   layers:
   - Default
   - TransparentFX
