@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Sipi's Gun
   m_EditorClassIdentifier: 
   m_Config:
-    m_name: My Gun
+    m_name: 
     m_fireType: 0
     m_maxMagazineSize: 0
     m_ammonCount: 0
     m_fireRate: 0
     m_damage: 0
-    m_muzzlePosition: {x: 0, y: 0.22838151, z: 0.5362889}
+    m_muzzlePosition: {x: 0, y: 0, z: 0}
