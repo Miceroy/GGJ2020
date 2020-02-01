@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR.Extras;
 
 public class MainMenuHandlerVR : MonoBehaviour
@@ -17,7 +18,7 @@ public class MainMenuHandlerVR : MonoBehaviour
         Debug.Log("Clicked: " + e.target.name);
         if(e.target.name == "StartButton")
         {
-            Application.LoadLevel("Scenes/MainGameScene");
+            SceneManager.LoadScene("MainMenuScene");
         }
         else if (e.target.name == "ExitButton")
         {
