@@ -10,6 +10,11 @@ public class AllowOnlyOneHand : MonoBehaviour
 
     public void OnEnable()
     {
+        if (ignore == null)
+        {
+            ignore = GetComponent<IgnoreHovering>();
+        }
+
         if (ignore != null)
         {
             Destroy(ignore);
