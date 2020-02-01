@@ -8,6 +8,7 @@ public class ProjectileBehaviourEditor : Editor
     private SerializedObject m_serializedProjectileObject;
     private SerializedProperty m_projectileObjectProperty;
     private SerializedProperty m_projectileConfigProperty;
+    private SerializedProperty m_damageProperty;
     private SerializedProperty m_radiusProperty;
 
     private void OnEnable()
@@ -24,6 +25,7 @@ public class ProjectileBehaviourEditor : Editor
         m_serializedProjectileObject = new SerializedObject(m_projectileObjectProperty.objectReferenceValue);
 
         m_projectileConfigProperty = m_serializedProjectileObject.FindProperty("m_Config");
+        m_damageProperty = m_projectileConfigProperty.FindPropertyRelative("m_damage");
         m_radiusProperty = m_projectileConfigProperty.FindPropertyRelative("m_radius");
     }
 
@@ -44,6 +46,8 @@ public class ProjectileBehaviourEditor : Editor
         }
 
         m_serializedProjectileObject.Update();
+        float damage = m_damageProperty.floatValue;
+        m_damageProperty.floatValue = EditorGUILayout.FloatField("Damage Amount: ", damage);
         float newRadius = m_radiusProperty.floatValue;
         m_radiusProperty.floatValue = EditorGUILayout.Slider("Explosion Radius: ", newRadius, 0f, 10f);
         m_serializedProjectileObject.ApplyModifiedProperties();
