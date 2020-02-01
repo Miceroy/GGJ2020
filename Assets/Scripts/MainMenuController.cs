@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
     public void startGame()
     {
-        Application.LoadLevel("Scenes/MainGameScene");
+        SceneManager.LoadScene("MainGameScene");
     }
 
     public void quit()
