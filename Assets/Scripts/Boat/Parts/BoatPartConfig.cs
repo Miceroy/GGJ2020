@@ -21,7 +21,7 @@ public struct BoatPartConfig
             m_currentHealth = value;
         }    
     }
-
+    public float MaxHealth { get{ return m_maxHealth; } }
     public float ExplosionDamage { get{ return m_explosionDamage; } }
     public float ExplosionRadius { get{ return m_explosionRadius; } }
 

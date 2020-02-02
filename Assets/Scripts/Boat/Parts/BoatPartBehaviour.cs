@@ -4,7 +4,9 @@ using UnityEngine;
 public class BoatPartBehaviour : MonoBehaviour, IFixable, IDamage, IExplodeable
 {
     public BoatPartObject m_PartObject;
-    private BoatPart m_boatPart;
+    private IBoatPart m_boatPart;
+
+    public IBoatPart Part { get{ return m_boatPart; } }
 
     public float Damage { get{ return m_boatPart.Damage; } }
     public float Radius { get{ return m_boatPart.Radius; } }

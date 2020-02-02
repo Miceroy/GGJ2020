@@ -8,6 +8,10 @@ public class BoatPart : IBoatPart
     public float Radius { get{ return m_config.ExplosionRadius; } }
     public bool IsExploded { get{ return m_isExploaded; } }
 
+    public float MaxHealth { get{ return m_config.MaxHealth; } }
+
+    public IBoatPart Part { get{ return this; } }
+
     public BoatPart(BoatPartConfig config)
     {
         m_config = config;
@@ -24,6 +28,9 @@ public class BoatPart : IBoatPart
 
     public void Fix(float amount)
     {
+        if(m_isExploaded)
+            return;
+            
         m_config.Health += amount;
     }
 
