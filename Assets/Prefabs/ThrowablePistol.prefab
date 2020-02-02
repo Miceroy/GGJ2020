@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 2371661710895072027}
   - component: {fileID: 2371661756997775189}
   - component: {fileID: 2371661710491295035}
+  - component: {fileID: 5654114866880159051}
   m_Layer: 0
   m_Name: ThrowablePistol
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2413747037733021557}
   m_LocalRotation: {x: -0.33198947, y: 0.000000029802322, z: 0.00000013411045, w: 0.9432831}
-  m_LocalPosition: {x: -0.70500135, y: 1.557, z: 0.95340693}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 2413040605385155673}
@@ -434,6 +435,20 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &5654114866880159051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2413747037733021557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1175431176ae1441bcdaedb30686f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GunConfigObject: {fileID: 11400000, guid: 7ec62898f8b11f342af5b5d6957e3ad6, type: 2}
+  tempInstantiate: {fileID: 0}
 --- !u!114 &2413040604401467443
 MonoBehaviour:
   m_ObjectHideFlags: 0
