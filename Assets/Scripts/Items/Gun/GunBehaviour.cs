@@ -28,17 +28,21 @@ public class GunBehaviour : MonoBehaviour
         {
             RaycastHit hit;
             
-            //Debug.DrawRay(transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward * 10.0f, Color.red, 5.0f);
+            Debug.DrawRay(transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward * 10.0f, Color.red, 5.0f);
 
             if (!Physics.Raycast(transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward, out hit))
                 return true;
 
-            //Debug.DrawLine(transform.TransformPoint(m_gun.Config.MuzzlePosition), hit.point, Color.yellow, 5.0f);
-            //Debug.LogWarning("Hit object " + hit.collider.gameObject);
+            Debug.DrawLine(transform.TransformPoint(m_gun.Config.MuzzlePosition), hit.point, Color.yellow, 5.0f);
+            Debug.LogWarning("Hit object " + hit.collider.gameObject);
 
-            IDamage damageable = hit.transform.GetComponentInParent<IDamage>();
-            if(damageable == null)
-                return true;
+            IDamage damageable = hit.transform.GetComponent<IDamage>();
+            if (damageable == null)
+            {
+                damageable = hit.transform.GetComponentInParent<IDamage>();
+                if (damageable == null)
+                    return true;
+            }
 
             damageable.Take(m_gun.Config.Damage);
         }
