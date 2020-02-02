@@ -12,6 +12,7 @@ public class BeatySpawner : MonoBehaviour
     public List<GameObject> animals;
     public float spawTimerAnimal;
     public float animalTimer;
+    public ParticleSystem animalParticles;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +69,10 @@ public class BeatySpawner : MonoBehaviour
             spawned.gameObject.AddComponent<Rigidbody>();
             spawTimerAnimal = Random.Range(10.0f, 20.0f);
             animalTimer = 0;
+
+            BoatHealth health = spawned.gameObject.AddComponent<BoatHealth>();
+            health.health = 1;
+            health.explosion = animalParticles;
         }
 
 

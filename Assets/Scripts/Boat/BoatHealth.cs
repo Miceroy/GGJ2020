@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BoatHealth : MonoBehaviour, IDamage
 {
-    [SerializeField] private float health = 10;
-    [SerializeField] private ParticleSystem explosion = null;
+    public float health = 10;
+    public ParticleSystem explosion = null;
 
     public void Take(float amount)
     {

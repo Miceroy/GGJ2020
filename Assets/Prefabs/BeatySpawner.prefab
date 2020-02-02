@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8441725258745930589}
   - component: {fileID: 2310880699874222852}
   m_Layer: 0
-  m_Name: WaterSplashEffect
+  m_Name: BeatySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,3 +58,5 @@ MonoBehaviour:
   - {fileID: 1423390230194416357, guid: dd60cc1927697164594eab3b3a74f740, type: 3}
   spawTimerAnimal: 5
   animalTimer: 0
+  animalParticles: {fileID: 2209667354197611054, guid: 1e91aefa96b73b149924307f201dc14a,
+    type: 3}
