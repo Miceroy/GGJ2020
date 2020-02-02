@@ -19,7 +19,7 @@ public class Enemy
             m_unityService = new UnityService();
     }
 
-    public void ShootAtPlayerBoat(Vector3 playerboatPosition, Vector3 muzzlePosition)
+    public void Shoot(Vector3 muzzlePosition, Vector3 direction)
     {
         if(!m_gun.Shoot())
         {
@@ -28,7 +28,7 @@ public class Enemy
         }
 
         RaycastHit hitInfo;
-        if(!m_unityService.RayCast(muzzlePosition, Vector3.Normalize(playerboatPosition - muzzlePosition), out hitInfo))
+        if(!m_unityService.RayCast(muzzlePosition, direction, out hitInfo))
             return;
 
         hitInfo.transform.GetComponent<IDamage>().Take(m_gun.Config.Damage);
