@@ -18,7 +18,11 @@ public class MainMenuHandlerVR : MonoBehaviour
         Debug.Log("Clicked: " + e.target.name);
         if(e.target.name == "StartButton")
         {
-            SceneManager.LoadScene("MainMenuScene");
+            SceneManager.LoadScene("Scenes/MainMenuScene");
+        }
+        else if (e.target.name == "BackToMainMenuButton")
+        {
+            SceneManager.LoadScene("Scenes/CreditsScene");
         }
         else if (e.target.name == "ExitButton")
         {
