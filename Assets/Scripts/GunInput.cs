@@ -10,10 +10,14 @@ public class GunInput : MonoBehaviour
     public GunBehaviour behaviour;
     public Animator gunAnimator;
     public AudioSource source;
+    public AudioClip clipShoot;
+    public AudioClip clipEmpty;
+    public LinearMapping linear;
 
     private SteamVR_Input_Sources hand;
     private Interactable interactable;
     private bool isActive = false;
+    private bool fullyPulled = false;
 
     private void Start()
     {
@@ -44,23 +48,47 @@ public class GunInput : MonoBehaviour
                 isActive = !isActive;
             }
         }
+
+        if (linear != null)
+        {
+            if (linear.value > 0.9f && !fullyPulled)
+            {
+                fullyPulled = !fullyPulled;
+            }
+            else if (linear.value < 0.1f && fullyPulled)
+            {
+                behaviour.Reload();
+                fullyPulled = !fullyPulled;
+            }
+        }
     }
 
     private void OnTriggerPress(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         if (behaviour != null)
         {
-            behaviour.Shoot();
-
-            if (source != null)
+            if (behaviour.Shoot())
             {
-                source.Stop();
-                source.Play();
+                if (source != null)
+                {
+                    source.Stop();
+                    source.clip = clipShoot;
+                    source.Play();
+                }
+
+                if (gunAnimator != null)
+                {
+                    gunAnimator.SetTrigger("Shoot");
+                }
             }
-
-            if (gunAnimator != null)
+            else
             {
-                gunAnimator.SetTrigger("Shoot");
+                if (source != null)
+                {
+                    source.Stop();
+                    source.clip = clipEmpty;
+                    source.Play();
+                }
             }
         }
         else

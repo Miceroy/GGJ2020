@@ -17,10 +17,10 @@ public class GunBehaviour : MonoBehaviour
         m_gun.TimeUpdate(Time.deltaTime);
     }
 
-    public void Shoot()
+    public bool Shoot()
     {
         if(!m_gun.Shoot())
-            return;
+            return false;
 
         FireType fireType = m_gun.Config.FireType;
 
@@ -28,12 +28,17 @@ public class GunBehaviour : MonoBehaviour
         {
             RaycastHit hit;
             
-            if(!Physics.Raycast(transform.position + transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward, out hit))
-                return;
+            //Debug.DrawRay(transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward * 10.0f, Color.red, 5.0f);
 
-            IDamage damageable = hit.transform.GetComponent<IDamage>();
+            if (!Physics.Raycast(transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward, out hit))
+                return true;
+
+            //Debug.DrawLine(transform.TransformPoint(m_gun.Config.MuzzlePosition), hit.point, Color.yellow, 5.0f);
+            //Debug.LogWarning("Hit object " + hit.collider.gameObject);
+
+            IDamage damageable = hit.transform.GetComponentInParent<IDamage>();
             if(damageable == null)
-                return;
+                return true;
 
             damageable.Take(m_gun.Config.Damage);
         }
@@ -41,5 +46,18 @@ public class GunBehaviour : MonoBehaviour
         {
             
         }
+        return true;
     }
+
+    public void Reload()
+    {
+        m_gun.Reload();
+    }
+
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.green;
+    //    if (m_gun == null) return;
+    //    Gizmos.DrawSphere(transform.TransformPoint(m_gun.Config.MuzzlePosition), 0.10f);
+    //}
 }

@@ -15,8 +15,8 @@ MonoBehaviour:
   m_Config:
     m_name: 
     m_fireType: 0
-    m_maxMagazineSize: 0
-    m_ammonCount: 0
-    m_fireRate: 0
-    m_damage: 0
+    m_maxMagazineSize: 20
+    m_ammonCount: 20
+    m_fireRate: 0.1
+    m_damage: 100
     m_muzzlePosition: {x: 0, y: 0, z: 0}
