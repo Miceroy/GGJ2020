@@ -52,6 +52,13 @@ public class GameManager : MonoBehaviour
     public void spawnNewEnemy()
     {
         GameObject enemyBoat = GameObject.Instantiate(enemyBoatPrefab, getRandomSpawnPoint(),Quaternion.identity);
+        EnemyBoatController _controller = enemyBoat.GetComponent<EnemyBoatController>();
+        if (_controller == null)
+        {
+            Debug.LogError("There was no controlle ron enemy!");
+            Destroy(enemyBoat);
+        }
+        enemyBoats.Add(_controller);
     }
 
     // Start is called before the first frame update

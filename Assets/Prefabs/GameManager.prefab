@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a4a2396ad28314b8b77ab3029ca140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBoatPrefab: {fileID: 1684989477196922772, guid: 2b62b973c5ec34543b409a4292233f2f,
+  enemyBoatPrefab: {fileID: 6658159006393250574, guid: 8d309bf364ac27e40aaf85c8d6a642a4,
     type: 3}
   spawnRadius: 300
   gameComponents: []
   enemyBoats: []
+  players: []

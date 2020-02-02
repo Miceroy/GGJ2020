@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778587372597362698}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -30.779528, y: -5.8015995, z: 16.438871}
+  m_LocalPosition: {x: 35.754578, y: 4.4109716, z: 16.40697}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1936442890710340309}
@@ -101,6 +101,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1936442890710340309}
   - component: {fileID: 9184257656466119300}
+  - component: {fileID: 5897707268956863414}
+  - component: {fileID: 6739150983828488331}
+  - component: {fileID: 5197382133016500140}
   m_Layer: 0
   m_Name: BattleShip_Prefab
   m_TagString: Untagged
@@ -136,11 +139,70 @@ MonoBehaviour:
   m_GameObject: {fileID: 3207962975026028742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc96e52a52bedf43a50fef1bde11977, type: 3}
+  m_Script: {fileID: 11500000, guid: 55252866cd1d59941a0f979b214cd1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 20
   translationSpeed: 5
+--- !u!54 &5897707268956863414
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207962975026028742}
+  serializedVersion: 2
+  m_Mass: 5000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6739150983828488331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207962975026028742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed9066fe88d1d640889621f4d7684e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bottomH: 0
+  _buoyancyCoeff: 1.5
+  _boyancyTorque: 8
+  _forceHeightOffset: -0.3
+  _enginePower: 11
+  _turnPower: 1.3
+  _boatWidth: 5
+  _useBoatLength: 0
+  _boatLength: 10
+  _dragInWaterUp: 3
+  _dragInWaterRight: 2
+  _dragInWaterForward: 1
+  _playerControlled: 1
+  _throttleBias: 0
+  _steerBias: 0
+  _debugDraw: 0
+--- !u!114 &5197382133016500140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207962975026028742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafe50632db0db649af2bc08fcbd86f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  explosion: {fileID: 2209667354197611054, guid: 1e91aefa96b73b149924307f201dc14a,
+    type: 3}
 --- !u!1 &5100485060666061971
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5100485060666061971}
   m_LocalRotation: {x: 0.69418085, y: 0.71135974, z: 0.10499388, w: -0.032504927}
-  m_LocalPosition: {x: -60.29496, y: 4.6695824, z: 17.729803}
+  m_LocalPosition: {x: 6.239146, y: 14.8821535, z: 17.6979}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1936442890710340309}
@@ -259,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7540835161775847312}
   m_LocalRotation: {x: 0.5055803, y: 0.5055803, z: 0.49435672, w: 0.4943567}
-  m_LocalPosition: {x: -53.383987, y: -4.189033, z: 25.952305}
+  m_LocalPosition: {x: 13.150119, y: 6.023538, z: 25.920403}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1936442890710340309}
@@ -334,6 +396,7 @@ GameObject:
   - component: {fileID: 3902618232260766395}
   - component: {fileID: 3231689879309480693}
   - component: {fileID: 2434461904665380683}
+  - component: {fileID: 6750842437369603966}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -349,7 +412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9015231188875455478}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -27.234108, y: -11.412571, z: 16.631903}
+  m_LocalPosition: {x: 39.3, y: -1.2, z: 16.6}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1936442890710340309}
@@ -400,6 +463,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &6750842437369603966
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9015231188875455478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13307787
+  m_Height: 0.74302244
+  m_Direction: 0
+  m_Center: {x: -0.26224488, y: 0.0058659744, z: 0.058208127}
 --- !u!1001 &5348105311753840701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -407,25 +484,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1936442890710340309}
     m_Modifications:
-    - target: {fileID: 6095737529679568586, guid: 80c8d63bb9ca58c4da462d28dae0f661,
-        type: 3}
-      propertyPath: m_Name
-      value: Duderoo
-      objectReference: {fileID: 0}
     - target: {fileID: 7116585868928199897, guid: 80c8d63bb9ca58c4da462d28dae0f661,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -78.43
+      value: -11.895895
       objectReference: {fileID: 0}
     - target: {fileID: 7116585868928199897, guid: 80c8d63bb9ca58c4da462d28dae0f661,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.07
+      value: 4.142571
       objectReference: {fileID: 0}
     - target: {fileID: 7116585868928199897, guid: 80c8d63bb9ca58c4da462d28dae0f661,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.5236
+      value: 16.491697
       objectReference: {fileID: 0}
     - target: {fileID: 7116585868928199897, guid: 80c8d63bb9ca58c4da462d28dae0f661,
         type: 3}
@@ -481,6 +553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095737529679568586, guid: 80c8d63bb9ca58c4da462d28dae0f661,
+        type: 3}
+      propertyPath: m_Name
+      value: Duderoo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c8d63bb9ca58c4da462d28dae0f661, type: 3}
