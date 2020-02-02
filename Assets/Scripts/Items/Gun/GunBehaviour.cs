@@ -28,7 +28,7 @@ public class GunBehaviour : MonoBehaviour
         {
             RaycastHit hit;
             
-            if(!Physics.Raycast(transform.position + transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward, out hit))
+            if(!Physics.Raycast(transform.TransformPoint(m_gun.Config.MuzzlePosition), transform.forward, out hit))
                 return;
 
             IDamage damageable = hit.transform.GetComponent<IDamage>();
