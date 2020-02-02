@@ -55,6 +55,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlayerBoat
       objectReference: {fileID: 0}
+    - target: {fileID: 54707522104481946, guid: a9de35a642561b7479e8ab40bb529e8c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4872491186423460, guid: a9de35a642561b7479e8ab40bb529e8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.2
@@ -114,10 +119,10 @@ PrefabInstance:
       propertyPath: _turnPower
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 54707522104481946, guid: a9de35a642561b7479e8ab40bb529e8c,
+    - target: {fileID: 23165060350728114, guid: a9de35a642561b7479e8ab40bb529e8c,
         type: 3}
-      propertyPath: m_Constraints
-      value: 10
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9de35a642561b7479e8ab40bb529e8c, type: 3}

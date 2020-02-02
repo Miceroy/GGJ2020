@@ -20,6 +20,14 @@ public class MainMenuHandlerVR : MonoBehaviour
         {
             SceneManager.LoadScene("Scenes/MainGameScene");
         }
+        else if (e.target.name == "BackToMainMenuButton")
+        {
+            SceneManager.LoadScene("Scenes/MainMenuScene");
+        }
+        else if (e.target.name == "CreditsButton")
+        {
+            SceneManager.LoadScene("Scenes/CreditsScene");
+        }
         else if (e.target.name == "ExitButton")
         {
             Application.Quit();
